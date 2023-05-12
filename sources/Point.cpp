@@ -7,7 +7,7 @@ namespace ariel
     {
         
     }
-    double Point::distance(const Point) const
+    double Point::distance(const Point)
     {
         return 0; // IMPLEMENT LATER
     }
@@ -15,7 +15,7 @@ namespace ariel
     {
         cout << "(" << this->x << "," << this->y << ")";
     }
-    Point Point::moveTowards (const Point target, double distance) const
+    Point Point::moveTowards (const Point target, double distance)
     {
         return Point(0,0); // IMPLEMENT LATER
     }

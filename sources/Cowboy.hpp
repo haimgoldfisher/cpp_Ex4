@@ -10,7 +10,7 @@ namespace ariel
 
         public:
         Cowboy(string, Point&); // - 6 bullets & 110 LP ALLWAYS
-        ~Cowboy(){}
+        ~Cowboy() override {}
         void shoot(Character*);
         bool hasboolets();
         void reload();

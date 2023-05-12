@@ -9,6 +9,6 @@ namespace ariel
         // LP = 150, speed = 8
         public:
         OldNinja(string, Point);
-        ~OldNinja(){}
+        ~OldNinja() override = default;
     };
 }

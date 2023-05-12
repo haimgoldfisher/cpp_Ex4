@@ -9,7 +9,7 @@ namespace ariel
         // LP = 100, speed = 14
         public:
         YountNinja(string, Point);
-        ~YountNinja(){}
+        ~YountNinja() override = default;
         
     };
 }
