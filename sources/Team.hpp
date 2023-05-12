@@ -11,11 +11,12 @@ namespace ariel
 {
     class Team
     {
-        int warriors = 0;
+        int warriorsNum = 0;
+        Character* leader;
 
         public:
         Team(Character*); // it creates a team, using a group member
-        ~Team();
+        virtual ~Team() = default;
         Team& add(Character*); // maybe should be void
         int stillAlive();
         void attack(Team*);
