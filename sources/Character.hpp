@@ -1,7 +1,5 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <stdexcept>
+#pragma once
+
 using namespace std;
 
 #include "Point.hpp"
@@ -15,8 +13,8 @@ namespace ariel
         int lifePoints = 0;
 
         public:
-        Character(string, Point&, int);
-        ~Character(){}
+        Character(string, Point, int);
+        virtual ~Character() = default;
         bool isAlive();
         double distance(Character*);
         void hit(int);

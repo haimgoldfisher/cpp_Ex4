@@ -1,13 +1,9 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <stdexcept>
-using namespace std;
+
 #include "Character.hpp"
 
 namespace ariel
 {
-        Character::Character(string _name, Point& _point, int _lp) : name(_name), location(_point), lifePoints(_lp){}
+        Character::Character(string _name, Point _point, int _lp) : name(_name), location(_point), lifePoints(_lp){}
         bool Character::isAlive()
         {
             return true;
