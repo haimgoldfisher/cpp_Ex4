@@ -10,5 +10,9 @@ namespace ariel
         public:
         TrainedNinja(string, Point);
         ~TrainedNinja() override = default;
+        TrainedNinja(const TrainedNinja&) = delete;               // copy constructor
+        TrainedNinja& operator=(const TrainedNinja&) = delete;    // copy assignment operator
+        TrainedNinja(TrainedNinja&&) = delete;                    // move constructor
+        TrainedNinja& operator=(TrainedNinja&&) = delete;         // move assignment operator
     };
 }
