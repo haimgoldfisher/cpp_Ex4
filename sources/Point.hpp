@@ -15,5 +15,7 @@ namespace ariel
         double distance(Point); // it returns the distance between two Points
         void print(); // it prints a Point in '(x,y)' form
         Point moveTowards (Point, double); // it returns the closest point from the source point to the target, considering the given distance
+        int getX();
+        int getY();
     };
 }

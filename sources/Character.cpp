@@ -28,4 +28,8 @@ namespace ariel
         {
             return "";
         }
+        int Character::getLP()
+        {
+            return this->lifePoints;
+        }
 }

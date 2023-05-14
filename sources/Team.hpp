@@ -4,6 +4,7 @@
 #include "OldNinja.hpp"
 #include "TrainedNinja.hpp"
 #include "YountNinja.hpp"
+#include <vector>
 
 constexpr int WARRIORS_LIMIT = 10;
 
@@ -13,6 +14,7 @@ namespace ariel
     {
         int warriorsNum = 0;
         Character* leader;
+        vector<Character*> warriors;
 
         public:
         Team(Character*); // it creates a team, using a group member

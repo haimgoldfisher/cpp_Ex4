@@ -10,7 +10,7 @@ namespace ariel
     }
     bool Cowboy::hasboolets()
     {
-        return false;
+        return this->bulletsNum > 0;
     }
     void Cowboy::reload()
     {
@@ -19,5 +19,10 @@ namespace ariel
     string Cowboy::print()
     {
         return "C " + Character::print();
+    }
+
+    int Cowboy::GetBulletsNum()
+    {
+        return this->bulletsNum;
     }
 }
