@@ -3,7 +3,7 @@
 
 namespace ariel
 {
-    Cowboy::Cowboy(string _name, Point& _point) : Character(_name, _point, 110), bulletsNum(6){}
+    Cowboy::Cowboy(string _name, Point _point) : Character(_name, _point, 110), bulletsNum(6){}
     void Cowboy::shoot(Character* character)
     {
 

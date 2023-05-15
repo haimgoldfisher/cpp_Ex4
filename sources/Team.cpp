@@ -20,4 +20,8 @@ namespace ariel
     {
         
     }
+    Character* Team::getLeader()
+    {
+        return this->leader;
+    }
 }

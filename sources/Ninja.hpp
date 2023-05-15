@@ -9,7 +9,7 @@ namespace ariel
         int speed = 0;
 
         public:
-        Ninja(string, Point&, int, int); // name, location, lp and speed
+        Ninja(string, Point, int, int); // name, location, lp and speed
         ~Ninja() override = default;
         Ninja(const Ninja&) = delete;               // copy constructor
         Ninja& operator=(const Ninja&) = delete;    // copy assignment operator
@@ -18,5 +18,6 @@ namespace ariel
         void move(Character*);
         void slash(Character*);
         string print() override;
+        int getSpeed();
     };
 }

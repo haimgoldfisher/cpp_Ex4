@@ -3,7 +3,7 @@
 
 namespace ariel
 {
-    Ninja::Ninja(string _name, Point& _point, int lp, int _speed) : Character(_name, _point, lp), speed(_speed){}
+    Ninja::Ninja(string _name, Point _point, int lp, int _speed) : Character(_name, _point, lp), speed(_speed){}
     void Ninja::move(Character*)
     {
 
@@ -15,5 +15,9 @@ namespace ariel
     string Ninja::print()
     {
         return "N " + Character::print();
+    }
+    int Ninja::getSpeed()
+    {
+        return this->speed;
     }
 }

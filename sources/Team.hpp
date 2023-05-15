@@ -3,7 +3,7 @@
 #include "Cowboy.hpp"
 #include "OldNinja.hpp"
 #include "TrainedNinja.hpp"
-#include "YountNinja.hpp"
+#include "YoungNinja.hpp"
 #include <vector>
 
 constexpr int WARRIORS_LIMIT = 10;
@@ -27,5 +27,6 @@ namespace ariel
         int stillAlive();
         void attack(Team*);
         virtual void print();
+        Character* getLeader();
     };
 }

@@ -4,7 +4,7 @@
 
 namespace ariel
 {
-    class Team2 : Team
+    class Team2 : public Team
     {
         
         public:

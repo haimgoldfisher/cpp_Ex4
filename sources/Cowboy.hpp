@@ -9,7 +9,7 @@ namespace ariel
         int bulletsNum;
 
         public:
-        Cowboy(string, Point&); // - 6 bullets & 110 LP ALLWAYS
+        Cowboy(string, Point); // - 6 bullets & 110 LP ALLWAYS
         ~Cowboy() override = default;
         Cowboy(const Cowboy&) = delete;               // copy constructor
         Cowboy& operator=(const Cowboy&) = delete;    // copy assignment operator
