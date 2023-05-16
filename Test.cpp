@@ -24,13 +24,13 @@ TEST_CASE("Point TEST:")
     // more dists
     CHECK_EQ(Point(1,1).distance(Point(4,5)), 5);
     CHECK_EQ(Point(-4,6).distance(Point(2,-2)), 10);
-    Point move = a.moveTowards(b, 0.5);
+    Point move = Point::moveTowards(a, b, 0.5);
     CHECK((move.getX() == 0.5) + (move.getY() == 0.5) == 2);
-    Point move2 = a.moveTowards(b, 0);
+    Point move2 =  Point::moveTowards(a, b, 0);
     CHECK((move2.getX() == 0) + (move2.getY() == 0) == 2);
-    CHECK_THROWS(a.moveTowards(b, -1)); // distance cannot be negative
+    CHECK_THROWS( Point::moveTowards(a, b, -1)); // distance cannot be negative
     Point start(2, 4), target(-1, 7);
-    Point middle = start.moveTowards(target, 3);
+    Point middle =  Point::moveTowards(start, target, 3);
     CHECK(start.distance(middle) + middle.distance(target) == start.distance(target)); // A->B + B->C = A->C
     CHECK_NOTHROW(b.print());
 }

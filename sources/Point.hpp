@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 
@@ -14,8 +15,8 @@ namespace ariel
         Point(double, double); // ctor: x & y 
         double distance(Point); // it returns the distance between two Points
         void print(); // it prints a Point in '(x,y)' form
-        Point moveTowards (Point, double); // it returns the closest point from the source point to the target, considering the given distance
-        int getX();
-        int getY();
+        static Point moveTowards (Point, Point, double); // the closest point from the source point to the target, considering the given distance
+        double getX();
+        double getY();
     };
 }

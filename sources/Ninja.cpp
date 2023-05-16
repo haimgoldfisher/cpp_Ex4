@@ -6,7 +6,8 @@ namespace ariel
     Ninja::Ninja(string _name, Point _point, int lp, int _speed) : Character(_name, _point, lp), speed(_speed){}
     void Ninja::move(Character* other)
     {
-        // this->setLocation(this->getLocation().moveTowards(other->getLocation(), this->speed));
+        // Point toMove(Point::moveTowards(this->getLocation(), other->getLocation(), this->speed));
+        // this->setLocation(toMove);
     }
     void Ninja::slash(Character* other)
     {

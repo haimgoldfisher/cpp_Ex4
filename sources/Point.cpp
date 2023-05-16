@@ -7,23 +7,24 @@ namespace ariel
     {
         
     }
-    double Point::distance(const Point)
+    double Point::distance(Point other)
     {
-        return 0; // IMPLEMENT LATER
+        return sqrt(pow(other.getX()-this->getX(), 2) + pow(other.getY()-this->getY(), 2));
     }
     void Point::print()
     {
         cout << "(" << this->x << "," << this->y << ")";
     }
-    Point Point::moveTowards (const Point target, double distance)
+    Point Point::moveTowards(Point source, Point target, double possibleDist)
     {
-        return Point(0,0); // IMPLEMENT LATER
+        Point a(0,0);
+        return a;
     }
-    int Point::getX()
+    double Point::getX()
     {
         return this->x;
     }
-    int Point::getY()
+    double Point::getY()
     {
         return this->y;
     }
