@@ -46,7 +46,7 @@ TEST_CASE("Cowboy TEST:")
     CHECK(instanceof<Character, Cowboy>(good)); // since Cowboy inherits from Character
     CHECK_EQ(good->getName(), "good");
     CHECK(bad->hasboolets());
-    CHECK_EQ(bad->GetBulletsNum(), 6);
+    CHECK_EQ(bad->getBulletsNum(), 6);
     CHECK(ugly->isAlive());
     CHECK_NOTHROW(good->print());
     CHECK((bad->getLocation().getX() == p1.getX()) + (bad->getLocation().getY() == p1.getY()) == 2);
@@ -71,10 +71,10 @@ TEST_CASE("Cowboy TEST:")
         iterCounter++;
     }
     CHECK_EQ(ugly->getLP(), 0);
-    CHECK_EQ(good->GetBulletsNum(), 0); // according to the comment ^
+    CHECK_EQ(good->getBulletsNum(), 0); // according to the comment ^
     CHECK_THROWS(good->shoot(bad)); // cannot shoot when has no bullets
     good->reload();
-    CHECK_EQ(good->GetBulletsNum(), 6);
+    CHECK_EQ(good->getBulletsNum(), 6);
     CHECK_THROWS(ugly->shoot(good)); // dead cannot shoot
     CHECK_THROWS(good->shoot(ugly)); // cannot shoot at dead warrior
     CHECK_THROWS(good->shoot(good)); // cannot shoot at himself
@@ -338,5 +338,4 @@ TEST_CASE("Can A Smart Team Do What A Regular Team Cannot? TEST:")
     // C will win because it smart 
     CHECK_FALSE(D.stillAlive());
     CHECK(C.stillAlive());
-    
 }
