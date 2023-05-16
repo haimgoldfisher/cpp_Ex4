@@ -18,15 +18,15 @@ namespace ariel
 
         public:
         Team(Character*); // it creates a team, using a group member
-        virtual ~Team() = default;
-        Team(const Team&) = delete;               // copy constructor
-        Team& operator=(const Team&) = delete;    // copy assignment operator
-        Team(Team&&) = delete;                    // move constructor
-        Team& operator=(Team&&) = delete;         // move assignment operator
+        virtual ~Team() = default; // dtor
+        Team(const Team&) = delete; // copy ctor
+        Team& operator=(const Team&) = delete; // copy assignment operator
+        Team(Team&&) = delete; // move ctor
+        Team& operator=(Team&&) = delete; // move assignment operator
         Team& add(Character*); // maybe should be void
-        int stillAlive();
-        void attack(Team*);
-        virtual void print();
-        Character* getLeader();
+        int stillAlive(); // returns the amount of live warriors
+        void attack(Team*); // all the team attack the other team
+        void print(); // prints all the members of the team
+        Character* getLeader(); // returns a pointer of the leader
     };
 }

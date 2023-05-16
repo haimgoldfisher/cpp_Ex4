@@ -8,11 +8,11 @@ namespace ariel
     {
         // LP = 120, speed = 12
         public:
-        TrainedNinja(string, Point);
-        ~TrainedNinja() override = default;
-        TrainedNinja(const TrainedNinja&) = delete;               // copy constructor
-        TrainedNinja& operator=(const TrainedNinja&) = delete;    // copy assignment operator
-        TrainedNinja(TrainedNinja&&) = delete;                    // move constructor
-        TrainedNinja& operator=(TrainedNinja&&) = delete;         // move assignment operator
+        TrainedNinja(string, Point); // ctor: name + location
+        ~TrainedNinja() override = default; // dtor
+        TrainedNinja(const TrainedNinja&) = delete; // copy ctor
+        TrainedNinja& operator=(const TrainedNinja&) = delete; // copy assignment operator
+        TrainedNinja(TrainedNinja&&) = delete; // move ctor
+        TrainedNinja& operator=(TrainedNinja&&) = delete; // move assignment operator
     };
 }
