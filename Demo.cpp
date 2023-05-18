@@ -12,7 +12,7 @@
 #include <cassert>
 using namespace std;
 
-// #include "sources/Team.hpp" //no need for other includes
+#include "sources/SmartTeam.hpp" //no need for other includes
 #include "sources/Team2.hpp"
 
 using namespace ariel;
@@ -71,7 +71,6 @@ int main() {
       team2.print();
       cout << endl;
    }
-   
 
 
      return 0; // no memory issues. Team should free the memory of its members. both a and b teams are on the stack. 

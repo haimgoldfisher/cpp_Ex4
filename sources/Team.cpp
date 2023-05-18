@@ -155,4 +155,9 @@ namespace ariel
     {
         return this->leader;
     }
+
+    void Team::setLeader(Character* warrior)
+    {
+        this->leader = warrior;
+    }
 }

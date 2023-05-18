@@ -14,5 +14,7 @@ namespace ariel
         SmartTeam& operator=(const SmartTeam&) = delete; // copy assignment operator
         SmartTeam(SmartTeam&&) = delete; // move ctor
         SmartTeam& operator=(SmartTeam&&) = delete; // move assignment operator
+
+        void attack(Team* opponet) override; // all the team attack the other team
     };
 }
