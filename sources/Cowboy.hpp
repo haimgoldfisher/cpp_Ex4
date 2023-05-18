@@ -20,5 +20,7 @@ namespace ariel
         void reload(); // it reload 6 new bullets
         string print() override;
         int getBulletsNum(); // bullets getter
+        void fight(Character* opponent) override;
+        Role getRole() override; // cowboy
     };
 }

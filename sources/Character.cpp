@@ -3,7 +3,7 @@
 
 namespace ariel
 {
-        Character::Character(string _name, Point _point, int _lp) : name(_name), location(_point), lifePoints(_lp){}
+        Character::Character(string _name, Point _point, int _lp) : name(_name), location(_point), lifePoints(_lp), inTeam(false){}
 
         bool Character::isAlive()
         {
@@ -17,6 +17,10 @@ namespace ariel
 
         void Character::hit(int damage)
         {
+            if(damage < 0)
+            {
+                throw invalid_argument("damage cannot be negative!");
+            }
             if (damage >= this->lifePoints)
             {
                 this->lifePoints = 0; // to avoid negative lp
@@ -45,6 +49,15 @@ namespace ariel
             this->location = other;
         }
 
+        void Character::setTeam()
+        {
+            if (this->inTeam)
+            {
+                throw runtime_error(this->name + " already in a team!");
+            }
+            this-> inTeam = true;
+        }
+
         string Character::print()
         {
             string details = "Name: ";
@@ -58,5 +71,10 @@ namespace ariel
             }
             details += "Location: (" + to_string(this->location.getX()) + "," + to_string(this->location.getY()) += ")";
             return details;
+        }
+
+        bool Character::hasTeam()
+        {
+            return this->inTeam;
         }
 }

@@ -19,5 +19,7 @@ namespace ariel
         void slash(Character*); // hit character, if able to, 40 lp
         string print() override;
         int getSpeed(); // speed getter
+        void fight(Character* opponent) override;
+        Role getRole() override; // ninja
     };
 }

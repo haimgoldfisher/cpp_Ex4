@@ -3,6 +3,8 @@
         "system_error": "cpp",
         "iostream": "cpp",
         "iterator": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "stdexcept": "cpp",
+        "ostream": "cpp"
     }
 }
