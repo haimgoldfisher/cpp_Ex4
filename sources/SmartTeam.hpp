@@ -9,12 +9,9 @@ namespace ariel
         
         public:
         SmartTeam(Character*); // it creates a team, using a group member
-        ~SmartTeam() override = default; // dtor
-        SmartTeam(const SmartTeam&) = delete; // copy ctor
-        SmartTeam& operator=(const SmartTeam&) = delete; // copy assignment operator
-        SmartTeam(SmartTeam&&) = delete; // move ctor
-        SmartTeam& operator=(SmartTeam&&) = delete; // move assignment operator
-
-        void attack(Team* opponet) override; // all the team attack the other team
+        void addingStrategy(Character* newWarrior) override; // the specific adding stategy of adding a new warrior to vector
+        void attackingStrategy(Team* other) override; // the specific attacking strategy of attacking other team
+        Character* bestCloseToMe(Team*, Character*); // return the ideal closest warrior to ninja
+        Character* findWeakest(Team*); // find the live character with lowest LP
     };
 }

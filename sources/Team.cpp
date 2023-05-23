@@ -100,6 +100,31 @@ namespace ariel
         return chosen;
     }
 
+    void Team::attackingStrategy(Team* other) // basic strategy for Team & Team2
+    {
+        Character* victim = this->closestToLeader(other); // the closest warrior from other team to this leader
+        for (Character* warrior : warriors) 
+        {
+            if (warrior->isAlive()) // dead warrior cannot attack
+            {
+                // cout << warrior->getName() + " fight " + victim->getName() << endl; 
+                warrior->fight(victim); // attack the victim in the warrior's way (shoot/slash)
+                if (!victim->isAlive())
+                {
+                    other->killMember();
+                    if (other->stillAlive() == 0)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        victim = this->closestToLeader(other);
+                    }
+                }
+            }
+        }
+    }
+
     void Team::attack(Team* other)
     {
         if (other == this)
@@ -122,27 +147,7 @@ namespace ariel
         {
             this->leader = this->closestToLeader(this); // the closest warrior from this team to this dead leader
         }
-        Character* victim = this->closestToLeader(other); // the closest warrior from other team to this leader
-        for (Character* warrior : warriors) 
-        {
-            if (warrior->isAlive()) // dead warrior cannot attack
-            {
-                // cout << warrior->getName() + " fight " + victim->getName() << endl; 
-                warrior->fight(victim); // attack the victim in the warrior's way (shoot/slash)
-                if (!victim->isAlive())
-                {
-                    other->killMember();
-                    if (other->stillAlive() == 0)
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        victim = this->closestToLeader(other);
-                    }
-                }
-            }
-        }
+        this->attackingStrategy(other); // may be change in smart team
     }
     void Team::print()
     {
