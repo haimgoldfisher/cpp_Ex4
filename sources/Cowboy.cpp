@@ -24,7 +24,7 @@ namespace ariel
             this->bulletsNum--;
         }
     }
-    bool Cowboy::hasboolets()
+    bool Cowboy::hasboolets() const
     {
         return this->bulletsNum > 0;
     }
@@ -36,12 +36,12 @@ namespace ariel
         }
         this->bulletsNum = 6;
     }
-    string Cowboy::print()
+    string Cowboy::print() const
     {
         return "C: " + Character::print();
     }
 
-    int Cowboy::getBulletsNum()
+    int Cowboy::getBulletsNum() const
     {
         return this->bulletsNum;
     }
@@ -57,7 +57,7 @@ namespace ariel
             this->reload();
         }
     }
-    Role Cowboy::getRole()
+    Role Cowboy::getRole() const
     {
         return COWBOY;
     }

@@ -8,10 +8,10 @@ namespace ariel
 {
     class Character
     {
-        string name;
+        string name; // name of the Character
         ariel::Point location; // form of (x,y)
         int lifePoints = 0; // since charcter is an abstract object
-        bool inTeam;
+        bool inTeam; // return if the Character belongs to a Team
 
         public:
         Character(string, Point, int); // ctor
@@ -22,16 +22,16 @@ namespace ariel
         virtual ~Character() = default; // dtor
         
         void hit(int); // LP 'setter' (can only be reduced)
-        string getName(); // name getter
-        int getLP(); // LP getter
-        Point getLocation(); // location getter
+        string getName() const; // name getter
+        int getLP() const; // LP getter
+        Point getLocation() const; // location getter
         void setLocation(Point&); // location setter;
-        virtual Role getRole() = 0; // since character has no role yet
+        virtual Role getRole() const = 0; // since character has no role yet
 
-        bool isAlive();
-        double distance(Character*); // dist between two character
-        virtual string print(); // return details about the character
-        bool hasTeam(); // return if the character belongs to a team
+        bool isAlive() const;
+        double distance(Character*) const; // dist between two character
+        virtual string print() const; // return details about the character
+        bool hasTeam() const; // returns if the character belongs to a team
         void setTeam(); // set that the character has a team
         virtual void fight(Character*) = 0; // every character can fight in his way (shoot/slash)
     };

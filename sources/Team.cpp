@@ -2,9 +2,9 @@
 
 namespace ariel
 {
-    Team::Team(Character* warrior) : leader(warrior), warriorsNum(1)
+    Team::Team(Character* warrior) : leader(warrior), warriorsNum(1), liveWarriors(0)
     {
-        if (warrior->hasTeam())
+        if (warrior->hasTeam()) // a Character cannot be in more than one Team
         {
             throw runtime_error(warrior->getName() + " already in a team!");
         }
@@ -66,7 +66,7 @@ namespace ariel
         return *this;
     }
 
-    int Team::stillAlive()
+    int Team::stillAlive() const
     {
         return this->liveWarriors;
     }
@@ -81,7 +81,7 @@ namespace ariel
         this->liveWarriors--;
     }
 
-    Character* Team::closestToLeader(Team* team)
+    Character* Team::closestToLeader(const Team* team) const
     {
         double minDist = MAX_DOUBLE;
         Character* chosen = nullptr;
@@ -149,14 +149,14 @@ namespace ariel
         }
         this->attackingStrategy(other); // may be change in smart team
     }
-    void Team::print()
+    void Team::print() const
     {
         for (Character* warrior : warriors)
         {
             cout << warrior->print() << endl;
         }
     }
-    Character* Team::getLeader()
+    Character* Team::getLeader() const
     {
         return this->leader;
     }

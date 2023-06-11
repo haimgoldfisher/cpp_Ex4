@@ -13,7 +13,7 @@ namespace ariel
         Point toMove(Point::moveTowards(this->getLocation(), other->getLocation(), this->speed));
         this->setLocation(toMove);
     }
-    void Ninja::slash(Character* other)
+    void Ninja::slash(Character* other) const
     {
         if(other == this) // cannot slash himself
         {
@@ -32,11 +32,11 @@ namespace ariel
             other->hit(40);
         }
     }
-    string Ninja::print()
+    string Ninja::print() const
     {
         return "N: " + Character::print();
     }
-    int Ninja::getSpeed()
+    int Ninja::getSpeed() const
     {
         return this->speed;
     }
@@ -51,7 +51,7 @@ namespace ariel
             this->slash(other);
         }
     }
-    Role Ninja::getRole()
+    Role Ninja::getRole() const
     {
         return NINJA;
     }

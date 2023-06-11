@@ -16,10 +16,10 @@ namespace ariel
         Ninja(Ninja&&) = delete; // move ctor
         Ninja& operator=(Ninja&&) = delete; // move assignment operator
         void move(Character*); // move to character, considering speed
-        void slash(Character*); // hit character, if able to, 40 lp
-        string print() override;
-        int getSpeed(); // speed getter
+        void slash(Character*) const; // hit character, if able to, 40 lp
+        string print() const override;
+        int getSpeed() const; // speed getter
         void fight(Character* opponent) override;
-        Role getRole() override; // ninja
+        Role getRole() const override; // ninja
     };
 }

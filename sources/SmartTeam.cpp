@@ -27,7 +27,7 @@ namespace ariel
         }
     }
 
-    Character* SmartTeam::findWeakest(Team* other)
+    Character* SmartTeam::findWeakest(Team* other) const
     {
         int minLP = MAX_INT;
         Character* chosen = nullptr;
@@ -46,7 +46,7 @@ namespace ariel
         return chosen;
     }
 
-    Character* SmartTeam::bestCloseToMe(Team* other, Character* me)
+    Character* SmartTeam::bestCloseToMe(Team* other, const Character* me) const
     {
         Character* ninja = nullptr;
         Character* cowboy = nullptr;

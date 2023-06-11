@@ -7,11 +7,11 @@ namespace ariel
     {
         
     }
-    double Point::distance(Point other)
+    double Point::distance(Point other) const
     {
         return sqrt(pow(other.x - this->x, 2) + pow(other.y - this->y, 2));
     }
-    void Point::print()
+    void Point::print() const
     {
         cout << "(" << this->x << "," << this->y << ")";
     }
@@ -36,11 +36,11 @@ namespace ariel
         // now we can stretch the vector according to 'possibleDist' and add it to the source point:
         return Point(source.x + (dx * possibleDist), source.y + (dy * possibleDist));
     }
-    double Point::getX()
+    double Point::getX() const
     {
         return this->x;
     }
-    double Point::getY()
+    double Point::getY() const
     {
         return this->y;
     }

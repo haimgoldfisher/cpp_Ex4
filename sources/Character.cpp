@@ -5,12 +5,12 @@ namespace ariel
 {
         Character::Character(string _name, Point _point, int _lp) : name(_name), location(_point), lifePoints(_lp), inTeam(false){}
 
-        bool Character::isAlive()
+        bool Character::isAlive() const
         {
             return this->lifePoints > 0;
         }
 
-        double Character::distance(Character* other)
+        double Character::distance(Character* other) const
         {
             return this->location.distance(other->location); // using Point::distance(Point)
         }
@@ -29,17 +29,17 @@ namespace ariel
             this->lifePoints -= damage;
         }
 
-        int Character::getLP()
+        int Character::getLP() const
         {
             return this->lifePoints;
         }
 
-        string Character::getName()
+        string Character::getName() const
         {
             return this->name;
         }
 
-        Point Character::getLocation()
+        Point Character::getLocation() const
         {
             return this->location;
         }
@@ -58,7 +58,7 @@ namespace ariel
             this-> inTeam = true;
         }
 
-        string Character::print()
+        string Character::print() const
         {
             string details = "Name: ";
             if (this->isAlive() > 0) // add LP only if alive
@@ -73,7 +73,7 @@ namespace ariel
             return details;
         }
 
-        bool Character::hasTeam()
+        bool Character::hasTeam() const
         {
             return this->inTeam;
         }

@@ -15,10 +15,10 @@ namespace ariel
 {
     class Team
     {
-        int warriorsNum = 0;
-        int liveWarriors = 0;
-        Character* leader;
-        vector<Character*> warriors;
+        int warriorsNum; // num of warrior in Team (?/10)
+        int liveWarriors; // num of alive warriors in Team
+        Character* leader; // pointer to leader of Team
+        vector<Character*> warriors; // vector of Characters
 
         public:
         Team(Character*); // it creates a team, using a group member
@@ -30,13 +30,13 @@ namespace ariel
         Team& add(Character*); // the classic body of adding
         virtual void addingStrategy(Character*); // the specific adding strategy of adding a new warrior to vector
         virtual void attackingStrategy(Team*); // the specific attacking strategy of attacking other team
-        int stillAlive(); // returns the amount of live warriors
+        int stillAlive() const; // returns the amount of live warriors
         vector<Character*>& getWarriors(); // vector getter
         void attack(Team*); // all the team attack the other team
-        void print(); // prints all the members of the team
-        Character* getLeader(); // returns a pointer of the leader
+        void print() const; // prints all the members of the team
+        Character* getLeader() const; // returns a pointer of the leader
         void setLeader(Character*); // update the leader
         void killMember(); // liveWarriors 'setter' (reduce by one)
-        virtual Character* closestToLeader(Team*); // finds the closest warrior from the chosen team to this team's leader 
+        virtual Character* closestToLeader(const Team*) const; // finds the closest warrior from the chosen team to this team's leader 
     };
 }

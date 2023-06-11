@@ -16,11 +16,11 @@ namespace ariel
         Cowboy(Cowboy&&) = delete; // move ctor
         Cowboy& operator=(Cowboy&&) = delete; // move assignment operator
         void shoot(Character*); // can shoot at other character
-        bool hasboolets();
+        bool hasboolets() const;
         void reload(); // it reload 6 new bullets
-        string print() override;
-        int getBulletsNum(); // bullets getter
+        string print() const override;
+        int getBulletsNum() const; // bullets getter
         void fight(Character* opponent) override;
-        Role getRole() override; // cowboy
+        Role getRole() const override; // cowboy
     };
 }
